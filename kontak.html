@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak — Kedai Lahajia</title>
+  <meta name="description" content="Hubungi atau kunjungi Kedai Lahajia di Surabaya.">
+  <script>try{if(sessionStorage.getItem("kl_nav")){document.documentElement.classList.add("no-loader");sessionStorage.removeItem("kl_nav");}}catch(e){}</script>
+  <link rel="icon" type="image/png" sizes="64x64" href="asset/favicon-64.png">
+  <link rel="apple-touch-icon" href="asset/favicon-192.png">
+  <link rel="preload" as="image" href="asset/logo-bowl.png">
+  <link rel="preload" as="image" href="asset/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="contact">
+  <!-- ===== LOADING SCREEN ===== -->
+  <div class="loader" id="loader" role="status" aria-label="Memuat halaman">
+    <span class="ld-shape ld-shape--1" aria-hidden="true"></span>
+    <span class="ld-shape ld-shape--2" aria-hidden="true"></span>
+    <span class="ld-shape ld-shape--3" aria-hidden="true"></span>
+    <div class="ld">
+      <div class="ld-logo" aria-hidden="true">
+        <div class="ld-logo__stage">
+          <span class="ld-logo__plate"></span>
+          <span class="ld-logo__shadow"></span>
+          <img class="ld-part ld-part--bowl" src="asset/logo-bowl.png" alt="" draggable="false">
+          <img class="ld-part ld-part--steam ld-part--steam1" src="asset/logo-steam-1.png" alt="" draggable="false">
+          <img class="ld-part ld-part--steam ld-part--steam2" src="asset/logo-steam-2.png" alt="" draggable="false">
+          <img class="ld-part ld-part--steam ld-part--steam3" src="asset/logo-steam-3.png" alt="" draggable="false">
+        </div>
+      </div>
+      <p class="ld-word" aria-hidden="true"><span class="ld-word__a"><span class="ld-w" style="--i:0">K</span><span class="ld-w" style="--i:1">E</span><span class="ld-w" style="--i:2">D</span><span class="ld-w" style="--i:3">A</span><span class="ld-w" style="--i:4">I</span></span><span class="ld-word__b"><span class="ld-w" style="--i:0">L</span><span class="ld-w" style="--i:1">A</span><span class="ld-w" style="--i:2">H</span><span class="ld-w" style="--i:3">A</span><span class="ld-w" style="--i:4">J</span><span class="ld-w" style="--i:5">I</span><span class="ld-w" style="--i:6">A</span></span></p>
+      <p class="ld-sub">Menyiapkan sajian untuk Anda...</p>
+      <div class="ld-bar" aria-hidden="true"><span class="ld-bar__fill" id="loaderFill"></span></div>
+      <p class="ld-pct" aria-hidden="true"><span id="loaderPct">0</span>%</p>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="Kedai Lahajia - Beranda">
+        <span class="navbar__logo-icon" aria-hidden="true"><img src="asset/logo.png" alt="" width="48" height="48" decoding="async"></span>
+        <span class="navbar__logo-text">Kedai <strong>Lahajia</strong></span>
+      </a>
+
+      <nav class="bottom-nav" id="bottomNav" aria-label="Navigasi utama">
+          <a href="index.html" class="bottom-nav__item" aria-label="Beranda">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+            <span class="bottom-nav__label"><span>Beranda</span></span>
+          </a>
+          <a href="menu.html" class="bottom-nav__item" aria-label="Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v7a2 2 0 0 0 2 2 2 2 0 0 0 2-2V2"/><path d="M9 2v20"/><path d="M17 22V2c-2.5 1.5-4 4.5-4 8 0 1.5 1 2.5 2.5 2.5H17"/></svg>
+            <span class="bottom-nav__label"><span>Menu</span></span>
+          </a>
+          <a href="tentang.html" class="bottom-nav__item" aria-label="Tentang Kami">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            <span class="bottom-nav__label"><span>Tentang Kami</span></span>
+          </a>
+          <a href="ulasan.html" class="bottom-nav__item" aria-label="Ulasan">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span class="bottom-nav__label"><span>Ulasan</span></span>
+    </a>
+      <a href="kontak.html" class="bottom-nav__item bottom-nav__item--active" aria-current="page" aria-label="Kontak">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="bottom-nav__label"><span>Kontak</span></span>
+          </a>
+        </nav>
+
+      <div class="navbar__actions">
+        <button class="btn btn--primary navbar__btn-pesan" id="btnPesanNavbar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span class="navbar__btn-label">Pesan Sekarang</span></button>
+        <a href="menu.html?mode=dinein" class="navbar__table" id="navTable" hidden aria-label="Nomor meja pesananmu"></a>
+        <button class="navbar__cart" id="btnCart" aria-label="Buka keranjang pesanan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="navbar__cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+<main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-eyebrow">Hubungi Kami</p>
+        <h1 class="page-header__title">Kunjungi atau Hubungi Kedai Lahajia</h1>
+        <p class="section-desc">Kami siap melayani Anda. Temukan informasi kontak dan lokasi kami di bawah ini.</p>
+      </div>
+    </section>
+    <section class="contact" id="kontak">
+      <div class="container">
+        <div class="contact__grid">
+          <div class="contact__card">
+            <div class="contact__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Lokasi</h3>
+            <p id="addressNote">Jl. Dr. Ir. H. Soekarno No.17, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur 60114</p>
+          </div>
+          <div class="contact__card">
+            <div class="contact__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3>WhatsApp</h3>
+            <p id="contactWhatsapp">Nomor resmi akan segera diperbarui.</p>
+          </div>
+          <div class="contact__card">
+            <div class="contact__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Jam Operasional</h3>
+            <p id="contactHours">Informasi jam operasional akan segera diperbarui.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="location" id="lokasi">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Lokasi</p>
+          <h2 class="section-title">Temukan Kedai Lahajia</h2>
+          <p class="section-desc">Jl. Dr. Ir. H. Soekarno No.17, Kalijudan, Surabaya. Mampir langsung atau buka petunjuk arahnya di Google Maps.</p>
+        </div>
+
+        <div class="location__grid">
+          <div class="location__map">
+            <iframe src="https://maps.google.com/maps?q=-7.2570639,112.7824334&hl=id&z=17&output=embed" title="Peta lokasi Kedai Lahajia di Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="location__chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <span>Kedai Lahajia &middot; Jl. Dr. Ir. H. Soekarno No.17</span></div>
+          </div>
+
+          <div class="location__side">
+            <article class="info-card">
+              <div class="info-card__head">
+                <span class="info-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div>
+                  <h3 class="info-card__title">Alamat</h3>
+                  <p class="info-card__sub">Jl. Dr. Ir. H. Soekarno No.17, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur 60114</p>
+                </div>
+              </div>
+              <div class="info-card__actions">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=-7.2570639,112.7824334" class="btn btn--dark" target="_blank" rel="noopener noreferrer">Petunjuk Arah <span class="btn__circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span></a>
+                <a href="https://maps.app.goo.gl/pGZ3Tdd9Ts66tQ7L8" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg> Buka di Google Maps</a>
+              </div>
+            </article>
+
+            <article class="info-card price-card" id="priceCard">
+              <div class="info-card__head">
+                <span class="info-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></span>
+                <div>
+                  <h3 class="info-card__title">Rp 1&ndash;25.000 per orang</h3>
+                  <p class="info-card__sub">Dilaporkan oleh 14 orang</p>
+                </div>
+              </div>
+              <ul class="price-bars">
+                <li class="price-bars__row" style="--w: 49%">
+                  <span class="price-bars__label">Rp 1&ndash;25.000</span>
+                  <span class="price-bars__track"><span class="price-bars__fill"></span></span>
+                </li>
+                <li class="price-bars__row" style="--w: 29%">
+                  <span class="price-bars__label">Rp 25.000&ndash;50.000</span>
+                  <span class="price-bars__track"><span class="price-bars__fill"></span></span>
+                </li>
+                <li class="price-bars__row" style="--w: 21%">
+                  <span class="price-bars__label">Rp 50.000&ndash;75.000</span>
+                  <span class="price-bars__track"><span class="price-bars__fill"></span></span>
+                </li>
+              </ul>
+              <p class="price-card__source">Perkiraan biaya per orang berdasarkan laporan pengunjung di Google Maps.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>★ Bahan Segar</span><span>★ Porsi Puas</span><span>★ Harga Terjangkau</span><span>★ Pesan Mudah</span><span>★ Kedai Lahajia Surabaya</span><span>★ Hangat Setiap Momen</span>
+      <span>★ Bahan Segar</span><span>★ Porsi Puas</span><span>★ Harga Terjangkau</span><span>★ Pesan Mudah</span><span>★ Kedai Lahajia Surabaya</span><span>★ Hangat Setiap Momen</span>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__col footer__brand">
+        <img class="footer__logo-img" src="asset/logo.png" alt="Logo Kedai Lahajia" width="84" height="84" loading="lazy" decoding="async">
+        <div class="footer__logo">Kedai <strong>Lahajia</strong></div>
+        <p class="footer__desc">Menyajikan makanan dan minuman pilihan dengan hangat di Surabaya. Nikmati setiap momen bersama sajian terbaik kami.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Navigasi</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="ulasan.html">Ulasan</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Kontak</h4>
+        <ul class="footer__links">
+          <li>Jl. Dr. Ir. H. Soekarno No.17, Kalijudan, Mulyorejo, Surabaya 60114</li>
+          <li id="footerWhatsapp">WhatsApp: Akan diperbarui</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="footerYear"></span> Kedai Lahajia. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- ===== CART PANEL ===== -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Keranjang pesanan">
+    <div class="cart-panel__header">
+      <h2 class="cart-panel__title">Keranjang Pesanan</h2>
+      <button class="cart-panel__close" id="btnCartClose" aria-label="Tutup keranjang">&times;</button>
+    </div>
+    <div class="cart-panel__mode" id="cartMode" hidden>
+      <span class="cart-panel__mode-text" id="cartModeText"></span>
+      <button type="button" class="cart-panel__mode-btn" id="btnChangeTable">Ubah</button>
+    </div>
+    <div class="cart-panel__body" id="cartBody">
+      <!-- Item keranjang diisi oleh JS -->
+    </div>
+    <div class="cart-panel__empty" id="cartEmpty" hidden>
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <p>Keranjang Anda masih kosong.</p>
+      <button class="btn btn--primary" id="btnCartEmptyClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v7a2 2 0 0 0 2 2 2 2 0 0 0 2-2V2"/><path d="M9 2v20"/><path d="M17 22V2c-2.5 1.5-4 4.5-4 8 0 1.5 1 2.5 2.5 2.5H17"/></svg> Lihat Menu</button>
+    </div>
+    <div class="cart-panel__footer" id="cartFooter" hidden>
+      <div class="cart-panel__total">
+        <span>Total Pesanan</span>
+        <strong id="cartTotal">Rp 0</strong>
+      </div>
+      <button class="btn btn--outline btn--block" id="btnClearCart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg> <span>Kosongkan Keranjang</span></button>
+      <button class="btn btn--primary btn--block" id="btnCheckout"><span>Lanjutkan Pemesanan</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </aside>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="modal-overlay" id="checkoutOverlay" hidden>
+    <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="modal__header">
+        <h2 class="modal__title" id="checkoutTitle">Formulir Pemesanan</h2>
+        <button class="modal__close" id="btnCheckoutClose" aria-label="Tutup formulir">&times;</button>
+      </div>
+      <div class="modal__body">
+        <form id="orderForm" novalidate>
+          <div class="form-group">
+            <label for="customerName">Nama Pelanggan <span class="required">*</span></label>
+            <input type="text" id="customerName" name="customerName" placeholder="Masukkan nama lengkap" autocomplete="name" required>
+            <span class="form-error" id="errorName"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">Nomor Telepon</label>
+            <input type="tel" id="customerPhone" name="customerPhone" placeholder="Contoh: 081234567890" autocomplete="tel">
+            <span class="form-error" id="errorPhone"></span>
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Metode Pemesanan <span class="required">*</span></legend>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="orderMethod" value="pickup" checked>
+                <span>Ambil Sendiri</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="orderMethod" value="delivery">
+                <span>Pengantaran</span>
+              </label>
+            <label class="radio-label">
+                <input type="radio" name="orderMethod" value="dinein">
+                <span>Makan di Tempat</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group" id="addressGroup" hidden>
+            <label for="customerAddress">Alamat Pengantaran <span class="required">*</span></label>
+            <textarea id="customerAddress" name="customerAddress" rows="3" placeholder="Masukkan alamat lengkap pengantaran"></textarea>
+            <span class="form-error" id="errorAddress"></span>
+            <p class="form-note">Biaya pengantaran akan dikonfirmasi oleh kedai.</p>
+          </div>
+
+          <div class="form-group" id="tableGroup" hidden>
+            <label for="customerTable">Nomor Meja <span class="required">*</span></label>
+            <select id="customerTable" name="customerTable"><option value="">Pilih nomor meja</option></select>
+            <span class="form-error" id="errorTable"></span>
+            <p class="form-note">Pesananmu akan diantar ke meja ini setelah dikonfirmasi kedai.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="customerNote">Catatan Tambahan</label>
+            <textarea id="customerNote" name="customerNote" rows="2" placeholder="Contoh: tanpa sambal, tambah es, dll."></textarea>
+          </div>
+
+          <div class="order-summary">
+            <h3 class="order-summary__title">Ringkasan Pesanan</h3>
+            <div class="order-summary__items" id="orderSummaryItems"></div>
+            <div class="order-summary__total">
+              <span>Total Pembayaran</span>
+              <strong id="orderSummaryTotal">Rp 0</strong>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn--outline" id="btnBackToCart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Kembali ke Keranjang</button>
+            <button type="submit" class="btn btn--primary" id="btnSubmitOrder"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.6A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg> Pesan via WhatsApp</button>
+          </div>
+          <p class="form-disclaimer">Pesanan Anda akan diteruskan ke WhatsApp Kedai Lahajia. Pesanan dianggap terkonfirmasi setelah pihak kedai membalas pesan Anda.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST NOTIFICATION ===== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
